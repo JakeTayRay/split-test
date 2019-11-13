@@ -9,39 +9,114 @@ var json = {
         {
             questions: [
                 {
+                    type: "text",
+                    name: "employeeLastName",
+                    title: "(Last)",
+                    isRequired: true
+                }, {
+                    type: "text",
+                    name: "employeeFirstName",
+                    startWithNewLine: false,
+                    title: "(First)",
+                    isRequired: true
+                }
+            ]
+        }, {
+            questions: [
+                {
+                    type: "text",
+                    inputType: "date",
+                    isRequired: true,
+                    name: "birthDate",
+                    startWithNewLine: false,
+                    title: "Date of birth:"
+                }, {
                     type: "radiogroup",
-                    name: "civilwar",
-                    title: "When was the Civil War?",
                     choices: [
-                        "1750-1800", "1800-1850", "1850-1900", "1900-1950", "after 1950"
+                        {
+                            value: "male",
+                            text: "Male"
+                        }, {
+                            value: "female",
+                            text: "Female"
+                        }
                     ],
-                    correctAnswer: "1850-1900"
+                    colCount: 0,
+                    isRequired: true,
+                    name: "sex",
+                    startWithNewLine: false,
+                    title: "Sex:"
+                }
+            ]
+        }, {
+            questions: [
+                {
+                    type: "panel",
+                    name: "education",
+                    elements: [
+                        {
+                            type: "dropdown",
+                            name: "schoolYearsCompleted",
+                            title: "How many yeas of school have you completed?",
+                            isRequired: true,
+                            choicesMin: 0,
+                            choicesMax: 12
+                        }
+                    ],
+                    title: "Education"
+                }, {
+                    type: "radiogroup",
+                    choices: [
+                        "Retired", "Unemployed", "Homemaker", "Employed"
+                    ],
+                    colCount: 0,
+                    isRequired: true,
+                    name: "employmentStatus",
+                    title: "Your current employment status:"
+                }
+
+            ]
+        }, {
+            questions: [
+                {
+                    type: "radiogroup",
+                    name: "syntaxtest",
+                    choices: [
+                        "var x = 0;","var x == 0;","var x = 'A';","Var x = 0;"
+                    ],
+                    isRequired: true,
+                    title: "Which of the following is incorrect syntax:"
+                }, {
+                    type: "radiogroup",
+                    name: "logictest",
+                    choices: [
+                        "x = a+b/2;","x = (a+b/2);","x = (a+b)/2;","x = a+b*2;"
+                    ],
+                    isRequired: true,
+                    title: "Which of the following is not a logic error if you were calculating average:"
                 }
             ]
         }, {
             questions: [
                 {
                     type: "radiogroup",
-                    name: "libertyordeath",
-                    title: "Who said 'Give me liberty or give me death?'",
-                    choicesOrder: "random",
+                    name: "owner",
                     choices: [
-                        "John Hancock", "James Madison", "Patrick Henry", "Samuel Adams"
+                        "Jake T.", "Adrian K.", "Julia B."
                     ],
-                    correctAnswer: "Patrick Henry"
-                }
-            ]
-        }, {
-            questions: [
+                    isRequired: true,
+                    title: "Which of the following people is the owner of the company?",
+                    correctAnswer: "Jake T."
+                },
                 {
                     type: "radiogroup",
-                    name: "magnacarta",
-                    title: "What is the Magna Carta?",
-                    choicesOrder: "random",
+                    name: "company",
                     choices: [
-                        "The foundation of the British parliamentary system", "The Great Seal of the monarchs of England", "The French Declaration of the Rights of Man", "The charter signed by the Pilgrims on the Mayflower"
+                        "Pharmaceuticals", "Cybersecurity", "Government Agency"
                     ],
-                    correctAnswer: "The foundation of the British parliamentary system"
+                    isRequired: true,
+                    title: "Which sector does our company fall under?",
+                    correctAnswer: "Pharmaceuticals"
                 }
             ]
         }
